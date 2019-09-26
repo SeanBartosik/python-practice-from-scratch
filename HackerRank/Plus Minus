@@ -1,0 +1,26 @@
+# Given an array of integers, calculate the fractions of its
+# elements that are positive, negative, and are zeros. Print the decimal value of each fraction on a new line.
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the plusMinus function below.
+def plusMinus(arr):
+        
+    plus = sum(map(lambda x: x > 0, arr))/len(arr)
+    neg = sum(map(lambda x: x< 0, arr))/len(arr)
+    zeros = sum(map(lambda x: x == 0, arr))/len(arr)
+
+    print("%.6f" % plus)
+    print("%.6f" % neg)
+    print("%.6f" % zeros)
+
+if __name__ == '__main__':
+    n = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
