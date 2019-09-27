@@ -1,0 +1,28 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the birthdayCakeCandles function below.
+def birthdayCakeCandles(arr):
+
+    # count = 0
+    peak = max(arr)
+    count= sum(map(lambda x: x == peak, arr))
+    return count
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    arr_count = int(input())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = birthdayCakeCandles(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
